@@ -7,7 +7,7 @@ const server = express();
 server.use(express.json());
 
 server.get("/", (req, res) => {
-  res.status(200).json({ api: "is up and running on `${PORT}`" });
+  res.status(200).json({ api: "is up and running" });
 });
 
 // returns http 200
