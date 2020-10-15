@@ -18,7 +18,7 @@ describe("server.js", () => {
           expect(res.body).toEqual({ api: "is up" });
         });
     });
-    it("should return api & up", () => {
+    it("should return api is up", () => {
       return supertest(server)
         .get("/")
         .then((res) => {
