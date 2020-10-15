@@ -1,13 +1,17 @@
-
-exports.seed = function(knex) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
+exports.seed = function (knex) {
+  return knex("dogs")
+    .truncate()
     .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex("hobbits").insert([
+        { name: "Tubby", breed: "Goldendoodle", color: "blonde", weight: 17.4 },
+        { name: "Willie", breed: "Boxer Mix", color: "brown", weight: 75 },
+        {
+          name: "Abbie",
+          breed: "Pitbull Husky Mix",
+          color: "tan and white",
+          weight: 60,
+        },
+        { name: "Einstein", breed: "Terrier", color: "white", weight: 15 },
       ]);
     });
 };
