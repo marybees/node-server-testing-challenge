@@ -2,7 +2,7 @@ exports.seed = function (knex) {
   return knex("dogs")
     .truncate()
     .then(function () {
-      return knex("hobbits").insert([
+      return knex("dogs").insert([
         { name: "Tubby", breed: "Goldendoodle", color: "blonde", weight: 17.4 },
         { name: "Willie", breed: "Boxer Mix", color: "brown", weight: 75 },
         {

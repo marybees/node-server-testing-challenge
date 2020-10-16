@@ -1,6 +1,7 @@
 const pgConnection =
   process.env.DATABASE_URL || "postgresql://postgres@localhost/dogs";
 
+// database for development
 module.exports = {
   development: {
     client: "sqlite3",
@@ -31,7 +32,7 @@ module.exports = {
     },
   },
 
-  // we will use this configuration for Heroku
+  // we will use this configuration for Heroku/production
   production: {
     client: "pg",
     connection: pgConnection,
