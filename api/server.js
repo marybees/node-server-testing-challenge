@@ -1,10 +1,15 @@
 const express = require("express");
+const helmet = require("helmet");
 
-const Dogs = require("../dogs/dogsModel.js");
+const db = require("../data/dbConfig");
+const DogsRouter = require("../dogs/dogsRouter");
 
 const server = express();
 
+server.use(helmet());
 server.use(express.json());
+
+server.use("/api", DogsRouter);
 
 server.get("/", (req, res) => {
   res.status(200).json({ api: "is up and running" });

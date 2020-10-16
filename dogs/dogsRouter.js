@@ -1,6 +1,6 @@
 const express = require("express");
 
-const Dogs = require("dogsModel.js");
+const Dogs = require("./dogsModel");
 
 const router = express.Router();
 
@@ -33,7 +33,7 @@ router.get("/dogs/:id", (req, res) => {
 router.post("/dogs", (req, res) => {
   const dogData = req.body;
 
-  Projects.add(dogData)
+  Dogs.add(dogData)
     .then((dog) => {
       res.status(201).json({ added: dog });
     })
@@ -42,7 +42,7 @@ router.post("/dogs", (req, res) => {
     });
 });
 
-router.put("/dogss/:id", (req, res) => {
+router.put("/dogs/:id", (req, res) => {
   const { id } = req.params;
   const changes = req.body;
 
